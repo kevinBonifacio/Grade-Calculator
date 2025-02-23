@@ -7,7 +7,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the number of assignments: ");
-        int numSubjects = scanner.nextInt();
+        int numSubjects = 0;
+
+        if (scanner.hasNextInt()) { // Check if input is available
+            numSubjects = scanner.nextInt();
+            System.out.println("You entered: " + numSubjects);
+        } else {
+            System.out.println("No input received.");
+        }
 
         double total = 0;
 
