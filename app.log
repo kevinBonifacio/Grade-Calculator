@@ -1,0 +1,6 @@
+2025-04-18 17:46:01,572 [main] INFO GRADES - Application started
+2025-04-18 17:46:05,100 [main] INFO GRADES - Number of assignments: 3
+2025-04-18 17:46:48,912 [main] INFO GRADES - Total score: 221.0
+2025-04-18 17:46:48,912 [main] INFO GRADES - Average score: 73.66666666666667
+2025-04-18 17:46:48,912 [main] INFO GRADES - Grade: C
+2025-04-18 17:46:48,913 [main] INFO GRADES - Application finished

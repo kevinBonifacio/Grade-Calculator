@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="https://logging.apache.org/xml/ns"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="
+                   https://logging.apache.org/xml/ns
+                   https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %p %c - %m%n"/>
+        </Console>
+        <File name="LOGFILE" fileName="app.log">
+            <PatternLayout pattern="%d [%t] %p %c - %m%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="GRADES" level="INFO">
+            <AppenderRef ref="LOGFILE"/>
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+    </Loggers>
+</Configuration>

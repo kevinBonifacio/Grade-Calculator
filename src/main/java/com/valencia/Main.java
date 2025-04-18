@@ -1,11 +1,19 @@
 package com.valencia;
 
+import java.util.Random;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
+    private static final Logger logger = LogManager.getLogger("GRADES");
+    private static final Random random = new Random();
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Main main = new Main();
+
+        logger.info("Application started");
 
         int numSubjects = main.getNumberOfAssignments(scanner);
         double total = main.calculateTotalScore(scanner, numSubjects);
@@ -14,6 +22,7 @@ public class Main {
 
         main.displayResults(total, average, grade);
 
+        logger.info("Application finished");
         scanner.close();
     }
 
@@ -22,10 +31,10 @@ public class Main {
 
         if (scanner.hasNextInt()) {
             int numSubjects = scanner.nextInt();
-            System.out.println("You entered: " + numSubjects);
+            logger.info("Number of assignments: {}", numSubjects);
             return numSubjects;
         } else {
-            System.out.println("No valid input received. Defaulting to 0.");
+            logger.error("No valid input received.");
             return 0;
         }
     }
@@ -52,8 +61,8 @@ public class Main {
     }
 
     public void displayResults(double total, double average, char grade) {
-        System.out.println("Total score: " + total);
-        System.out.println("Average score: " + average);
-        System.out.println("Grade: " + grade);
+        logger.info("Total score: {}", total);
+        logger.info("Average score: {}", average);
+        logger.info("Grade: {}", grade);
     }
 }
